@@ -4,14 +4,14 @@ require 'capybara'
 require 'capybara/dsl'
 require 'selenium-webdriver'
 
-Capybara.app_host = ENV['SITE_NAME'] || 'http://www.testrisk.com'
+Capybara.app_host = ENV['SITE_NAME'] || 'http://www.google.com'
 driver = (ENV['DRIVER']).to_sym unless ENV['DRIVER'].nil?
 Capybara.default_selector = :css
 Capybara.default_max_wait_time = 30
 Capybara.ignore_hidden_elements = true
 Capybara.save_path = File.dirname(__FILE__) + '/media'
 
-Capybara.current_driver = driver || :driver_iphone6_vertical_visible
+Capybara.current_driver = driver || :driver_chrome_fullscreen_headless
 
 # * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 # * * * * * * * * * *  D R I V E R S  * * * * * * * * * * *
